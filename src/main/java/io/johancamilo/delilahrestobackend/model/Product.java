@@ -2,11 +2,9 @@ package io.johancamilo.delilahrestobackend.model;
 
 import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-@Component
 public class Product {
 
     private int id;
@@ -20,7 +18,7 @@ public class Product {
     @NotNull
     private int amount;
 
-    public Product(@NotBlank String name, @NotBlank int price, @NotBlank int amount) {
+    public Product(@NotBlank String name, @NotNull int price, @NotNull int amount) {
         this.name = name;
         this.price = price;
         this.amount = amount;

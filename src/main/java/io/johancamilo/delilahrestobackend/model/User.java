@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.*;
 
-@Component
 public class User {
 
     private int id;
@@ -18,10 +17,8 @@ public class User {
     @Email
     private String email;
 
-    @Max(10)
-    @Min(10)
-    @NotNull
-    private int phone;
+    @NotBlank
+    private String phone;
 
     @NotBlank
     private String address;
@@ -33,7 +30,7 @@ public class User {
     }
 
     public User(@NotBlank String userName, @NotBlank String fullName, @Email String email,
-                @Max(10) @Min(10) @NotNull int phone, @NotBlank String address, @NotBlank String password) {
+                @NotBlank String phone, @NotBlank String address, @NotBlank String password) {
         this.userName = userName;
         this.fullName = fullName;
         this.email = email;
@@ -70,11 +67,11 @@ public class User {
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
